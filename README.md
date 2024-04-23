@@ -2,7 +2,7 @@
 
   
 
-Trabajo para el proyecto integrador de la ETec.
+Trabajo para la materia proyecto integrador de la ETec.
 
   
 
