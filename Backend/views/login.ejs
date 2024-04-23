@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEndStore</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">        
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+<body>
+
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="./img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace" href="contacto.html">contacto</a>
+        <a class="navegacion__enlace" href="registro.html">Tu Cuenta</a>
+    </nav>
+
+    <main>
+
+        <div class="contenedor__todo">
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar en la página</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                </div>
+                <div class="caja__trasera-register">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <button id="btn__registrarse">Regístrarse</button>
+                </div>
+            </div>
+
+            <!--Formulario de Login y registro-->
+            <div class="contenedor__login-register">
+                <!--Login-->
+                <form action="" class="formulario__login">
+                    <h2>Iniciar Sesión</h2>
+                    <input type="text" placeholder="Correo Electronico">
+                    <input type="password" placeholder="Contraseña">
+                    <button>Entrar</button>
+                </form>
+
+                <!--Register-->
+                <form action="" class="formulario__register">
+                    <h2>Regístrarse</h2>
+                    <input type="text" placeholder="Nombre completo">
+                    <input type="text" placeholder="Correo Electronico">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <input type="password" placeholder="Repetir contraseña">
+                    <button>Regístrarse</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">© 2024 Front End Store - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/js/login.js"></script>
+    <script src="./js/registro.js"></script>
+    <script src="./js/localStorage.js"></script>
+    
+    <style>
+        root {
+        --primario: #9C27B0;
+        --primarioOscuro: #89119d;
+        --secundario: #FFCE00;
+        --secundarioOscuro: rgb(233,287,2);
+        --blanco: #FFF;
+        --negro: #000;
+        --gris: #757575;
+        --fuente: 'Staatliches', cursive;
+        --sombra:0 0.2rem 2rem 0.2rem var(--secundarioOscuro);
+
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: var(--secundario);
+            font-family: var(--fuente);
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+        h2 {
+            font-size: 3.2rem;
+        }
+        h3 {
+            font-size: 2.4rem;
+        }
+
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: var(--primario);
+            font-family: var(--fuente);
+        }
+
+        main{
+            width: 100%;
+            padding: 20px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .contenedor__todo{
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            color: var(--secundario);
+            margin-bottom: 10rem;
+        }
+
+        .caja__trasera{
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            background-color: var(--primarioOscuro);
+            box-shadow: var(--sombra);
+            border-radius: 2rem;
+
+        }
+
+        .caja__trasera div{
+            margin: 100px 40px;
+            color: var(--secundario);
+            transition: all 500ms;
+        }
+
+
+        .caja__trasera div p,
+        .caja__trasera button{
+            margin-top: 30px;
+        }
+
+        .caja__trasera div h3{
+            font-weight: 400;
+            font-size: 26px;
+        }
+
+        .caja__trasera div p{
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .caja__trasera button{
+            padding: 10px 40px;
+            border: none;
+            font-size: 14px;
+            background: transparent;
+            font-weight: 600;
+            cursor: pointer;
+            color: white;
+            outline: none;
+            transition: all 300ms;
+        }
+
+        .caja__trasera button:hover{
+            color: var(--secundario);
+        }
+
+        /*Formularios*/
+
+        .contenedor__login-register{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 380px;
+            position: relative;
+            top: -185px;
+            left: 10px;
+
+            /*La transicion va despues del codigo JS*/
+            transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+        }
+
+        .contenedor__login-register form{
+            width: 100%;
+            padding: 80px 20px;
+            background: white;
+            position: absolute;
+            border-radius: 20px;
+        }
+
+        .contenedor__login-register form h2{
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--secundario);
+        }
+
+        .contenedor__login-register form input{
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            background: #F2F2F2;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .contenedor__login-register form button{
+            padding: 10px 40px;
+            margin-top: 40px;
+            border: none;
+            font-size: 14px;
+            background: var(--primario);
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--secundario);
+            outline: none;
+        }
+
+
+
+
+        .formulario__login{
+            opacity: 1;
+            display: block;
+        }
+        .formulario__register{
+            display: none;
+        }
+
+
+
+        @media screen and (max-width: 850px){
+
+            main{
+                margin-top: 50px;
+            }
+
+            .caja__trasera{
+                max-width: 350px;
+                height: 300px;
+                flex-direction: column;
+                margin: auto;
+            }
+
+            .caja__trasera div{
+                margin: 0px;
+                position: absolute;
+            }
+
+
+            /*Formularios*/
+
+            .contenedor__login-register{
+                top: -10px;
+                left: -5px;
+                margin: auto;
+            }
+
+            .contenedor__login-register form{
+                position: relative;
+            }
+
+            tml {
+            box-sizing: border-box;
+            font-size: 62.5%;
+            z-index: 3;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        /*Globales*/
+
+        body {
+            background-color: var(--primario);
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-family: var(--fuente);
+            color: var(--blanco);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .contenedor {
+            max-width: 120rem;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: var(--secundario);
+            font-family: var(--fuente);
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+        h2 {
+            font-size: 3.2rem;
+        }
+        h3 {
+            font-size: 2.4rem;
+        }
+
+        @media (max-width: 460px){
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            h3 {
+                font-size: 0.9rem;
+            }
+        }
+
+        /** Header **/
+        .header {
+            display: flex;
+            justify-content: center;
+        }
+
+        .header__logo {
+            margin: 3rem 0;
+        }
+
+        }
+    </style>
+
+</body>
+</html>

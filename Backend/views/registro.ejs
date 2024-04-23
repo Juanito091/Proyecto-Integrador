@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrontEndStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+    <nav class="navegacion">  
+      <a class="navegacion__enlace navegacion__enlace--activo" href="">Tu Cuenta</a>
+    </nav>
+
+    <main class="contenedor">
+
+      <form action="/users/signup" class="formulario" id="formulario" method="POST">
+        <!-- Grupo: Usuario -->
+        <div class="formulario__grupo" id="grupo__usuario">
+          <label for="usuario" class="formulario__label">Usuario</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="usuario"
+              id="usuario"
+              placeholder="Nombre de la cuenta"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros y letras. 
+          </p>
+        </div>
+
+        <!-- Grupo: Nombre -->
+        <div class="formulario__grupo" id="grupo__nombre">
+          <label for="nombre" class="formulario__label">Nombre</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="nombre"
+              id="nombre"
+              placeholder="Tu Nombre"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros y letras.
+          </p>
+        </div>
+
+        <!-- Grupo: Contraseña -->
+        <div class="formulario__grupo" id="grupo__password">
+          <label for="password" class="formulario__label">Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password"
+              id="password"
+            />
+          </div>
+          <p class="formulario__input-error">
+            La contraseña tiene que ser de 4 a 12 dígitos.
+          </p>
+        </div>
+
+        <!-- Grupo: Contraseña 2 -->
+        <div class="formulario__grupo" id="grupo__password2">
+          <label for="password2" class="formulario__label"
+            >Repetir Contraseña</label
+          >
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password2"
+              id="password2"
+            />
+          </div>
+          <p class="formulario__input-error">
+            Ambas contraseñas deben ser iguales.
+          </p>
+        </div>
+
+        <!-- Grupo: Correo Electronico -->
+        <div class="formulario__grupo" id="grupo__correo">
+          <label for="correo" class="formulario__label"
+            >Correo Electrónico</label
+          >
+          <div class="formulario__grupo-input">
+            <input
+              type="email"
+              class="formulario__input"
+              name="correo"
+              id="correo"
+              placeholder="...@...com"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El correo solo puede contener letras, numeros, puntos, guiones y
+            guion bajo.
+          </p>
+        </div>
+
+        <!-- Grupo: Teléfono -->
+        <div class="formulario__grupo" id="grupo__telefono">
+          <label for="telefono" class="formulario__label">Teléfono</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="telefono"
+              id="telefono"
+              placeholder="261*******"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El telefono solo puede contener numeros y el maximo son 14 dígitos.
+          </p>
+        </div>
+
+        <!-- Grupo: Terminos y Condiciones -->
+        <div class="formulario__grupo" id="grupo__terminos">
+          <label class="formulario__label">
+            <input
+              class="formulario__checkbox"
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+            />
+            Acepto los Terminos y Condiciones
+          </label>
+        </div>
+
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Algún o algunos campos incorrectos
+          </p>
+        </div>
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">  
+            <button  class="formulario__btn" id="register_button">Registrar</button>
+            <label class="formulario__label">¿Ya tenes una cuenta? Inicia sesión</label>
+            <button class="formulario__btn" id="verlogin">Iniciar seción</button>
+          <!-- <a href="./targetacredito.html" class="">
+            <button type="button" class="formulario__btn">Métodos de pago</button>
+          </a> -->
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+            Formulario enviado exitosamenttargete!
+          </p>
+        </div>
+        <style>
+    :root {
+      --primario: #9C27B0;
+      --primarioOscuro: #89119d;
+      --secundario: #FFCE00;
+      --secundarioOscuro: rgb(233,287,2);
+      --blanco: #FFF;
+      --negro: #000;
+      --gris: #757575;
+      --fuente: 'Staatliches', cursive;
+      --sombra:0 0.2rem 2rem 0.2rem var(--secundarioOscuro);
+
+  }
+
+  /* apply a natural box layout model to all elements, but allowing components to change */
+  header{
+    background-image: url(./logo.png);
+  }
+  
+  html {
+      box-sizing: border-box;
+      font-size: 62.5%;
+      z-index: 3;
+  }
+  *, *:before, *:after {
+      box-sizing: inherit;
+  }
+
+  /*Globales*/
+
+  body {
+      background-color: var(--primario);
+      font-size: 1.6rem;
+      line-height: 1.5;
+  }
+
+  p {
+      font-size: 1.8rem;
+      font-family: var(--fuente);
+      color: var(--blanco);
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  img {
+      max-width: 100%;
+  }
+
+  .contenedor {
+      max-width: 120rem;
+      margin: 0 auto;
+  }
+
+  h1, h2, h3 {
+      text-align: center;
+      color: var(--secundario);
+      font-family: var(--fuente);
+  }
+
+  h1 {
+      font-size: 4rem;
+  }
+  h2 {
+      font-size: 3.2rem;
+  }
+  h3 {
+      font-size: 2.4rem;
+  }
+
+  @media (max-width: 460px){
+      h1 {
+          font-size: 2.5rem;
+      }
+      h2 {
+          font-size: 1.7rem;
+      }
+      h3 {
+          font-size: 0.9rem;
+      }
+  }
+
+  /** Footer **/
+  .footer {
+      background-color: var(--primarioOscuro);
+      padding: 1rem 0;
+      margin-top: 2rem;
+  }
+  .footer__texto {
+      text-align: center;
+  }
+
+  /** Navegacion **/
+  .navegacion {
+      background-color: var(--primarioOscuro);
+      padding: 1rem 0;
+      display: flex;
+      justify-content: center;
+      
+  }
+  .navegacion__enlace {
+      font-family: var(--fuente);
+      color: var(--blanco);
+      font-size: 2.7rem;
+      margin-right: 2rem;
+  }
+  .navegacion__enlace:last-of-type {
+      margin-right: 0;
+  }
+  .navegacion__enlace--activo,
+  .navegacion__enlace:hover { 
+      color: var(--secundario);
+  }
+
+  @media (max-width: 678px){
+      .navegacion {
+          display: grid;
+          text-align: center;
+          place-items: center;
+      }
+      .navegacion__enlace {
+          font-size: 2.2rem;
+      }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--fuente);
+  }
+
+  main {
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .contenedor {
+      width: 100%;
+    }
+  }
+
+  .formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .formulario__label {
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--blanco);
+    font-weight: normal;
+  }
+
+  .formulario__grupo-input {
+    position: relative;
+  }
+
+  .formulario__input {
+    width: 100%;
+    background: #fff;
+    border: 3px;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+  }
+
+  .formulario__input:focus {
+    border: 3px solid;
+    outline: none;
+    box-shadow: var(--secundarioOscuro);
+  }
+
+  .formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+  }
+
+  .formulario__input-error-activo {
+    display: block;
+  }
+
+  .formulario__validacion-estado {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+  }
+
+  .formulario__checkbox {
+    margin-right: 10px;
+  }
+
+  .formulario__grupo-terminos, 
+  .formulario__mensaje,
+  .formulario__grupo-btn-enviar {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 768px) {
+    .fa-exclamation-triangle{
+      font-size: smaller;
+      width: auto;
+    }
+  }
+
+  .formulario__mensaje {
+    height: 45px;
+    width: 35%;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+  }
+
+  .formulario__mensaje-activo {
+    display: block;
+  }
+
+  .formulario__mensaje p {
+    margin: 0;
+  }
+
+  .formulario__grupo-btn-enviar {
+    display: flex;
+    flex-direction: column;
+    grid-row: 5;
+  }
+
+  .formulario__btn {
+    height: 45px;
+    width: 20%;
+    background: var(--blanco);
+    color: var(--negro);
+    font-weight: normal;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+    margin-bottom: 2rem;
+  }
+
+  .formulario__btn:hover {
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+  }
+
+  .formulario__mensaje-exito {
+    font-size: 14px;
+    color: #119200;
+    display: none;
+  }
+
+  .formulario__mensaje-exito-activo {
+    display: block;
+  }
+
+  /* ----- -----  Estilos para Validacion ----- ----- */
+  .formulario__grupo-correcto .formulario__validacion-estado {
+    color: #1ed12d;
+    opacity: 1;
+  }
+
+  .formulario__grupo-incorrecto .formulario__label {
+    color: #bb2929;
+  }
+
+  .formulario__grupo-incorrecto .formulario__validacion-estado {
+    color: #bb2929;
+    opacity: 1;
+  }
+
+  .formulario__grupo-incorrecto .formulario__input {
+    border: 3px solid #bb2929;
+  }
+
+  @media screen and (max-width: 800px) {
+    .formulario {
+      grid-template-columns: 1fr;
+    }
+
+    .formulario__grupo-terminos, 
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar {
+      grid-column: 1;
+    }
+
+    .formulario__btn {
+      width: 100%;
+    }
+  }
+        </style>
+        <script>
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
+
+/* Expresiones de restinccion de tipeado */
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
+
+/* Variable para la validacion de campos */
+const campos = {
+	usuario: false,
+	nombre: false,
+	password: false,
+	correo: false,
+	telefono: false
+}
+
+/* Funcion para aplicar las otras funciones a cada campo */
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+		case "usuario":
+			validarCampo(expresiones.usuario, e.target, 'usuario');
+		break;
+		case "nombre":
+			validarCampo(expresiones.nombre, e.target, 'nombre');
+		break;
+		case "password":
+			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword2();
+		break;
+		case "password2":
+			validarPassword2();
+		break;
+		case "correo":
+			validarCampo(expresiones.correo, e.target, 'correo');
+		break;
+		case "telefono":
+			validarCampo(expresiones.telefono, e.target, 'telefono');
+		break;
+	}
+}
+
+/* Funcion para la validacion de los campos */
+const validarCampo = (expresion, input, campo) => {
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
+
+/* Funcion validar contraseñas iguales */
+const validarPassword2 = () => {
+	const inputPassword1 = document.getElementById('password');
+	const inputPassword2 = document.getElementById('password2');
+
+	if(inputPassword1.value !== inputPassword2.value){
+		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__password2 i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos['password'] = false;
+	} else {
+		document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__password2 i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos['password'] = true;
+	}
+}
+
+/* Eveno de keyup y blur */
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+/* Evento de submit y aparicion de mensajes de error y exito */ 
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	let usuarioInp = document.getElementById('usuario').value;
+	let nomInp= document.getElementById('nombre').value;
+	let emailInp = document.getElementById('correo').value;
+	let telefonoInp = document.getElementById('telefono').value;
+	let passwordInp= document.getElementById('password').value;
+	
+	/*const formData = {
+		usuario: e.target[0],
+		nombre: e.target[1],
+		password: e.target[2],
+		email: e.target[3],
+		telefono: e.target[4]
+	}*/
+
+	const formData = new FormData();
+	formData.append('usuario', usuarioInp);
+	formData.append('nombre', nomInp);
+	formData.append('password', passwordInp);
+	formData.append('email', emailInp);
+	formData.append('telefono', telefonoInp);
+
+
+	console.log('formdata: ')
+	console.log(formData);
+
+	fetch('http://localhost:3000/usuarios/registro', {
+		method: 'POST',
+		body: formData,
+		mode: 'no-cors'
+	})
+	.then(response => response.json())
+	.then(data => {
+		console.log('Datos : ' + data);
+	})
+	.catch(error => {
+		console.log('Hay un error: ' + error);
+	});
+
+	const terminos = document.getElementById('terminos');
+	if(campos.usuario && campos.nombre && campos.password && campos.correo && campos.telefono && terminos.checked ){
+		formulario.reset();
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		setTimeout(() => {
+			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto');
+		});
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+        setTimeout(() => {
+            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+        }, 4000);
+	}
+});
+        </script>
+      </form>
+
+      <!--MODAL PARA EL LOG IN-->
+      <div id="loginContainer" class=""></div>
+
+    </main>
+    <footer class="footer">
+      <p class="footer__texto">© 2024 FrontEnd Store - Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="../../src/js/registro.js"></script>
+    <script src="../../src/js/app.js"></script>
+  </body>
+</html>

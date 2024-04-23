@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrontEndStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/registro.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="index.html">
+        <img class="header__logo" src="./img/titulo.png" alt="Logotipo" />
+      </a>
+    </header>
+
+    <nav class="navegacion">
+      <a class="navegacion__enlace" href="index.html">Tienda</a>
+      <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+      <a class="navegacion__enlace" href="contacto.html">Contacto</a>
+      <a class="navegacion__enlace navegacion__enlace--activo" href="registro.html">Tu Cuenta</a>
+    </nav>
+
+    <main class="contenedor">
+
+      <form action="" class="formulario" id="formulario">
+     
+        <div class="formulario__grupo" id="grupo__usuario">
+          <label for="usuario" class="formulario__label">Usuario</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="usuario"
+              id="usuario"
+              placeholder="Nombre de la cuenta"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
+        </div>
+
+        <div class="formulario__grupo" id="grupo__nombre">
+          <label for="nombre" class="formulario__label">Nombre</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="nombre"
+              id="nombre"
+              placeholder="Tu Nombre"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El usuario tiene que ser de 4 a 16 dígitos y solo puede contener
+            numeros, letras y guion bajo.
+          </p>
+        </div>
+
+        <div class="formulario__grupo" id="grupo__password">
+          <label for="password" class="formulario__label">Contraseña</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password"
+              id="password"
+            />
+          </div>
+          <p class="formulario__input-error">
+            La contraseña tiene que ser de 4 a 12 dígitos.
+          </p>
+        </div>
+
+        <div class="formulario__grupo" id="grupo__password2">
+          <label for="password2" class="formulario__label"
+            >Repetir Contraseña</label
+          >
+          <div class="formulario__grupo-input">
+            <input
+              type="password"
+              class="formulario__input"
+              name="password2"
+              id="password2"
+            />
+          </div>
+          <p class="formulario__input-error">
+            Ambas contraseñas deben ser iguales.
+          </p>
+        </div>
+
+        <!-- Grupo: Correo Electronico -->
+        <div class="formulario__grupo" id="grupo__correo">
+          <label for="correo" class="formulario__label"
+            >Correo Electrónico</label
+          >
+          <div class="formulario__grupo-input">
+            <input
+              type="email"
+              class="formulario__input"
+              name="correo"
+              id="correo"
+              placeholder="...@...com"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El correo solo puede contener letras, numeros, puntos, guiones y
+            guion bajo.
+          </p>
+        </div>
+
+        <!-- Grupo: Teléfono -->
+        <div class="formulario__grupo" id="grupo__telefono">
+          <label for="telefono" class="formulario__label">Teléfono</label>
+          <div class="formulario__grupo-input">
+            <input
+              type="text"
+              class="formulario__input"
+              name="telefono"
+              id="telefono"
+              placeholder="261*******"
+            />
+          </div>
+          <p class="formulario__input-error">
+            El telefono solo puede contener numeros y el maximo son 14 dígitos.
+          </p>
+        </div>
+
+        <!-- Grupo: Terminos y Condiciones -->
+        <div class="formulario__grupo" id="grupo__terminos">
+          <label class="formulario__label">
+            <input
+              class="formulario__checkbox"
+              type="checkbox"
+              name="terminos"
+              id="terminos"
+            />
+            Acepto los Terminos y Condiciones
+          </label>
+        </div>
+
+        <div class="formulario__mensaje" id="formulario__mensaje">
+          <p>
+            <i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Algún o algunos campos incorrectos
+          </p>
+        </div>
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">  
+            <button type="submit" class="formulario__btn" id="">Registrar</button>
+            <label class="formulario__label">¿Ya tenes una cuenta? Inicia sesión</label>
+            <!-- <button class="formulario__btn" id="verlogin">Iniciar seción</button> -->
+          <!-- <a href="./targetacredito.html" class="">
+            <button type="button" class="formulario__btn">Métodos de pago</button>
+          </a> -->
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">
+            Formulario enviado exitosamente!
+          </p>
+        </div>
+      
+      </form>
+      <div id="loginContainer" class="modal_login"></div>
+
+    </main>
+    <footer class="footer">
+      <p class="footer__texto">© 2024 Tienda De Ropa - Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="./js/registro.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/localStorage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PTVS9W7');</script>
+    <!-- End Google Tag Manager -->
+
+    <title>Tienda de ropa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">        
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTVS9W7"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="./img/titulo.png" alt="Logotipo">
+        </a>
+
+        <div class="user" id="user">
+            <a href="registro.html">
+                <button id="" type="button" class="user__btn"></button>
+                <p id="sesion__init" class="user__init-sesion">Inicia sesión</p>
+            </a>
+        </div>
+        <div class="user__modal" id="userModal">
+            <h3 class="sesion_title">Inicie Sesion</h3>
+            <input class="input__username" id="input__username" type="text" placeholder="Usuario">
+            <input class="input__password" id="input__password" type="text" placeholder="Contraseña">
+            <button class="sesion_button" type="submit">Enviar</button>
+            <p class="close_sesion_modal" id="closeSesionModal">❌</p>
+        </div>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace" href="contacto.html">Contacto</a>
+        <a class="navegacion__enlace" href="registro.html">Tu Cuenta</a>
+        <a class="navegacion__enlace ver-carrito" id="verCarrito" >Carrito<span id="cantidadCarrito" class="cantidad-carrito"></span></a>
+        
+
+    </nav>
+
+    <main class="contenedor">
+        <h1>Coleccion TRAP$tar</h1>
+
+        <!--contenido de compra-->
+        <div class="grid">
+            <div class="shop-content" id="shopContent"></div>
+        </div>
+
+        <!--contenedor de la interfaz del carrito-->
+        <div class="modal-container" id="modalContainer"></div>
+    </main>
+
+    <div class="aviso-cookies" id="aviso-cookies">
+        <img class="galleta" src="./img/cookie.svg" alt="cookie">
+        <h3 class="titulo-cookies">Cookies</h3>
+        <p class="parrafo-cookies">Utilizamos cookies propias para mejorar la calidad de su experiencia y seguridad.</p>
+        <button class="boton-cookies" id="btn-aceptar-cookies">De acuerdo</button>
+        <a href="aviso-cookies.html" class="enlace-cookies">Aviso de cookies</a>
+    </div>
+    <div class="fondo-aviso-cookies" id="fondo-aviso-cookies"></div>
+
+    <footer class="footer">
+        <p class="footer__texto">© 2024 Tienda De Ropa - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./js/registro.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/comprar.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/cookies.js"></script>
+    <script src="./js/producto.js"></script>
+
+</body>
+</html>

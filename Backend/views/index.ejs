@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front End Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <header class="header">
+        <a href="http://127.0.0.1:5500/prueba/src/index.html">
+            <img class="header__logo" src="http://127.0.0.1:3000/prueba/src/img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace" href="http://127.0.0.1:5500/src/index.html">Tienda</a>
+        <a class="navegacion__enlace" href="http://127.0.0.1:5500/src/nosotros.html">Nosotros</a>
+        <a class="navegacion__enlace" href="http://127.0.0.1:5500/src/contacto.html">Contacto</a>
+        <a class="navegacion__enlace" href="http://127.0.0.1:5500/src/registro.html">Tu Cuenta</a>
+
+    </nav>
+
+    <main class="contenedor">
+        <div class="upload__image formulario">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image">
+                <button type="submit">
+                    Subir
+                </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">© 2024 Front End Store - Todos los derechos reservados.</p>
+    </footer>
+
+
+        <style>
+            /*paleta de colores y fuente principal*/
+            :root {
+                --primario: #9C27B0;
+                --primarioOscuro: #89119d;
+                --secundario: #FFCE00;
+                --secundarioOscuro: rgb(233,287,2);
+                --blanco: #FFF;
+                --negro: #000;
+                --gris: #757575;
+                --fuente: 'Staatliches', cursive;
+                --sombra:0 0.2rem 2rem 0.2rem var(--secundarioOscuro);
+
+            }
+
+            /* apply a natural box layout model to all elements, but allowing components to change */
+            html {
+                box-sizing: border-box;
+                font-size: 62.5%;
+                z-index: 3;
+            }
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            /*Globales*/
+
+            body {
+                background-color: var(--primario);
+                font-size: 1.6rem;
+                line-height: 1.5;
+            }
+
+            p {
+                font-size: 1.8rem;
+                font-family: var(--fuente);
+                color: var(--blanco);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            .contenedor {
+                max-width: 120rem;
+                margin: 0 auto;
+            }
+
+            h1, h2, h3 {
+                text-align: center;
+                color: var(--secundario);
+                font-family: var(--fuente);
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 3.2rem;
+            }
+            h3 {
+                font-size: 2.4rem;
+            }
+
+            @media (max-width: 460px){
+                h1 {
+                    font-size: 2.5rem;
+                }
+                h2 {
+                    font-size: 1.7rem;
+                }
+                h3 {
+                    font-size: 0.9rem;
+                }
+            }
+
+            /** Header **/
+            .header {
+                display: flex;
+                justify-content: center;
+            }
+
+            .header__logo {
+                margin: 3rem 0;
+            }
+
+
+            /** Footer **/
+            .footer {
+                background-color: var(--primarioOscuro);
+                padding: 1rem 0;
+                margin-top: 2rem;
+            }
+            .footer__texto {
+                text-align: center;
+            }
+
+            /** Navegacion **/
+            .navegacion {
+                background-color: var(--primarioOscuro);
+                padding: 1rem 0;
+                display: flex;
+                justify-content: center;
+                
+            }
+            .navegacion__enlace {
+                font-family: var(--fuente);
+                color: var(--blanco);
+                font-size: 2.7rem;
+                margin-right: 2rem;
+            }
+            .navegacion__enlace:last-of-type {
+                margin-right: 0;
+            }
+
+            @media (max-width: 678px){
+                .navegacion {
+                    display: grid;
+                    text-align: center;
+                    place-items: center;
+                }
+                .navegacion__enlace {
+                    font-size: 2.2rem;
+                }
+            }
+        </style>
+    </form>
+</body>
+</html>

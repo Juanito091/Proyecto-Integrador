@@ -1,0 +1,57 @@
+const productos = [ 
+    {
+        id:1,
+        nombre:"HOODIE TRAP$tar X",
+        precio:79.00,
+        img:"./img/22.png",
+        cantidad: 1,
+    },
+    {
+        id:2,
+        nombre:"HOODIE TRAP$tar C",
+        precio:80,
+        img:"./img/33.png",
+        cantidad: 1,
+    },
+    {
+        id:3,
+        nombre:"HOODIE TRAP$tar V",
+        precio:79,
+        img:"./img/44.png",
+        cantidad: 1,
+    },    
+    {
+        id:5,
+        nombre:"HOODIE TRAP$tar Z",
+        precio:89,
+        img:"./img/55.png",
+        cantidad: 1,
+    },
+    {
+        id:6,
+        nombre:"T-SHIRT TRAP$tar X",
+        precio:55,
+        img:"./img/r1.png",
+        cantidad: 1,
+    },
+    {
+        id:7,
+        nombre:"T-SHIRT TRAP$tar c",
+        precio:50,
+        img:"./img/r2.png",
+        cantidad: 1,
+    },
+    {
+        id:8,
+        nombre:"T-SHIRT TRAP$tar v",
+        precio:49,
+        img:"./img/r3.png",
+        cantidad: 1,
+    },
+    {
+        id:9,
+        nombre:"T-SHIRT TRAP$tar Z",
+        precio:50,
+        img:"./img/r4.png",
+        cantidad: 1,
+    },];
